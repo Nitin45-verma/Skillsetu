@@ -10,7 +10,7 @@ export const SocketProvider = ({ children }) => {
   const { user, refreshUser } = useAuth();
 
   useEffect(() => {
-    const socketUrl = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+    const socketUrl = import.meta.env.VITE_SOCKET_URL || 'https://skillsetu-backend.vercel.app';
     const newSocket = io(socketUrl, {
       transports: ['polling', 'websocket'],
       reconnection: true,
