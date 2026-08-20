@@ -1,0 +1,56 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    background-color: #FAF8F5;
+    color: #1E293B;
+  }
+}
+
+/* Custom Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FAF8F5 50%, #CCFBF1 100%);
+}
+
+.gradient-card-amber {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+}
+
+.gradient-card-terracotta {
+  background: linear-gradient(135deg, #E05A47 0%, #C84636 100%);
+}
+
+.gradient-card-teal {
+  background: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
