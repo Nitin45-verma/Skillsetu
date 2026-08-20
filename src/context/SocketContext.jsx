@@ -12,11 +12,17 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     const socketUrl = import.meta.env.VITE_SOCKET_URL || 'https://skillsetu-backend.vercel.app';
     const newSocket = io(socketUrl, {
-      transports: ['polling', 'websocket'],
+      transports: ['websocket', 'polling'],
       reconnection: true,
-      reconnectionAttempts: 10,
-      reconnectionDelay: 1000,
+      reconnectionAttempts: 2,
+      reconnectionDelay: 5000,
+      timeout: 5000,
       autoConnect: true
+    });
+
+    newSocket.on('connect_error', () => {
+      // Disconnect cleanly if socket server is unavailable (e.g. serverless backend)
+      newSocket.disconnect();
     });
 
     setSocket(newSocket);
